@@ -1,0 +1,327 @@
+@charset "ISO-8859-1";
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+  	background-image: linear-gradient(#000000, #000033);
+  	font-family: consolas; 	
+}
+
+
+body a { /* Removing underline on all links*/ 
+	text-decoration: none;
+}
+
+/*========================== INPUT FORMS =============================*/
+body input:focus, textarea:focus {
+  outline: none; /* removing white border on input forms when selected*/
+}
+
+/* AUTO FILL: overriding and removing default white background and text color  when auto-fill input forms*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;    
+    -webkit-text-fill-color: grey !important;
+}
+/*========================== end INPUT FORMS =============================*/
+/*========================== SCROLLBAR =============================*/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 5px;
+  opacity: 0;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d403d4; 
+}
+/*========================== end SCROLLBAR  =============================*/
+/*============================ PAGE TEMPLATE (don't change!)=====================================*/
+.background {
+	display: grid;
+	grid-template-rows: auto 65% 15%; /* was 20% 65% 15%*/
+	height: 100%;
+	width: 100%;
+	background-image: url("stars.png");
+	overflow: auto;
+	background-size: 100%;
+}
+
+.header { /* 1st template section. 20% */
+	display: grid;
+	place-items: center; 
+}
+
+.main { /* 2nd template section. 65% */
+	display: grid;
+	place-items: center; 
+}
+
+.footer { /* 3rd template section. 15% */
+	display: grid;
+	place-items: center; 
+}
+
+.header-container {
+	display: inline-grid;
+	width: 1000px;
+	height: 100%; 
+	align-items: center; 
+	overflow: hidden;
+	font-family: aksent;
+	color: #990099;
+	font-size: 70px;
+}
+
+.footer-container {
+	display: grid;
+	height: 100%;
+	justify-self: center;	
+	grid-template-rows: 1fr;	
+	grid-template-columns: 1fr auto auto ; 
+}
+
+/*========================= end PAGE TEMPLATE =====================================*/
+/*========================= INTRO =====================================*/
+.intro {
+	width: 900px;
+	margin: 0 auto;
+	font-size: 20px;
+	font-family: Agg_Courier;
+	color: #ff0000;
+	background-color:rgba(0, 0, 0, 0.7);
+	border: 1px solid #990099;	
+	border-radius: 10px;
+	padding: 20px;	
+}
+
+.hidden {
+	display: none;
+}
+
+.intro textarea, input, #btn-feedback {
+	border: 1px solid #E61E46;	
+	background-color:rgba(0, 0, 0, 0.4);
+	color: #E61E46;
+	border-radius: 0 !important; 
+}
+
+
+.intro textarea:hover, input:hover, #btn-feedback:hover {
+	box-shadow:0 0 15px 2px #ff0000 !important;	
+}
+
+/*========================= end INTRO =====================================*/
+/*========================== BUTTONS =============================*/
+.button{
+	margin: auto 40px; /* horizontal space between buttons*/
+	height: 50px; 
+	width: 50px;	
+	border: 12px solid #5B1522;
+	background-color: #E61E46;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: aksent;
+	overflow-wrap: anywhere; 	
+	cursor: pointer; 	
+	box-sizing: content-box; 
+	text-align: center; 
+	line-height: 80%; 
+	
+}
+
+.button:hover {
+	box-shadow:0 0 15px 2px #880288;	
+}
+
+ #input-button { 
+	height: 100%;  
+	width: 100%;	
+	background-color: #E61E46;
+	border: 0; 
+	color: black;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: aksent;
+	overflow-wrap: anywhere; 	
+	cursor: pointer;
+}
+
+#btn-dashboard {
+	border: 12px solid #0e4a4f;
+	background-color: #23c1ce;
+}
+
+#btn-edit {
+	border: 12px solid #613e07;
+	background-color: #ee9911;
+}
+/*========================== end BUTTONS =============================*/
+/*========================== CARD.JSP =============================*/
+.card { /* Card is within main container*/ 
+	height: 100%;  
+	width: 900px;
+	border: 2px solid #990099;	
+	border-radius: 10px;
+	background-color:rgba(0, 0, 0, 0.4);
+	box-shadow:0 0 15px 4px #880288;
+	overflow: auto; 
+}
+
+.card:hover {
+	box-shadow:0 0 15px 4px #d403d4;	 
+}
+
+table {
+	margin: 20px;
+}
+
+th {
+	vertical-align: top;	
+	text-align: right;
+	font-size: 30px;
+	font-family: Agency FB;
+	color: #0d6efd;
+}
+
+td {
+	vertical-align: top;	
+	font-size: 40px;
+	font-family: Agg_Courier;
+	color: grey;
+	overflow-wrap: anywhere; /* large text goes to the next line*/
+	
+}
+
+/*========================= end CARD.JSP ============================*/
+/*========================== EDIT.JSP / NEWGAME.JSP =============================*/
+.form-container{ 
+	align-content: stretch;
+	display: grid;
+	width: 700px;
+	height: 100%;
+}
+
+.game-forms-container {
+	display: grid;
+	row-gap: 10px;	
+	height: 100%; 
+	width: 100%; 
+	grid-template-rows: 15% 15% 45% 15%;
+	justify-content: center;
+	grid-template-columns: 700px auto; 
+}
+
+.game-forms-container input, textarea {
+	grid-column: 1; 
+	width: 100%; 
+	height:100%;
+	background-color:rgba(0, 0, 0, 0.4) ;
+	border: 1px solid #990099;
+    border-radius:10px;
+    color: grey; 
+    font-size: 20px;
+    font-family: consolas;
+    padding: 0; /* removes standard padding (overlays elements)*/
+	}
+
+.game-forms-container input[type=text]:hover, textarea:hover { 
+  box-shadow:0 0 15px 4px #880288 !important;	
+}
+
+.game-forms-container textarea { 
+  overflow: auto;
+  resize: none; /* removes standard text area resizing option*/  
+}
+
+.errors-container {
+	grid-row: 1;
+	grid-column: 2; /* #5ERRORS */
+	width: 400px;
+	color: #E61E46;
+	font-family: consolas;
+	margin-left: 10px;
+}
+	
+/*========================== end EDIT.JSP / NEWGAME.JSP=============================*/
+/*========================== GAMES.JSP =============================*/
+.table-main {
+	justify-self: center;
+	display: grid;
+	grid-template-columns: 300px 300px 300px;	
+	gap: 10px;
+	padding-bottom: 120px;	
+}	
+
+.table-cell {
+	display: grid;
+	height: 150px;
+	border: 1px solid #990099;	
+	border-radius: 10px;
+	background-color:rgba(0, 0, 0, 0.4);
+	font-family: Agency FB;
+	color: #0080ff;
+	text-transform: uppercase;
+	place-items: center; 
+	text-align: center; 
+	overflow: hidden; 
+}
+
+.table-cell:hover {
+  box-shadow:0 0 15px 4px #880288;
+}
+
+#game-genre {
+	font-family: Agg_Courier;
+	color: grey;
+}
+
+#btn-addnew {
+	background-color: #25da82;
+	border: 12px solid #11633b;	
+	border-radius: 50%;
+	box-shadow:0 0 35px 2px #1ca060;		
+}
+
+#btn-addnew:hover {
+	color: black;
+	border: 12px solid #1ca060;
+}
+
+#btn-logout {
+	box-shadow:0 0 35px 2px #a2253c;		
+}
+
+#btn-logout:hover {
+	color: black;
+	border: 12px solid #a2253c;
+}
+
+/*========================== end GAMES.JSP =============================*/
+
+
+
+
+
+
+
+
+
+
